@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu,search,person,language,home,category_search,sms" />
+</head>
+<body>
+    <header>
+
+        <!-- Menu hambúrguer -->
+        <span onclick="alterarMenu()" class="material-symbols-outlined" id="burger">menu</span>
+
+        <!-- Barra de pesquisa -->
+        <div class="search-box">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" data-i18n-placeholder="placeholderBarraPesquisa" placeholder="Pesquisar">
+        </div>
+
+        <!-- Ícones de linguagem e usuário -->
+        <div class="header-icons">
+            <span id="btn-language" class="material-symbols-outlined">language</span>
+            <span id="user-info" class="material-symbols-outlined">person</span>
+        </div>
+
+    </header>
+
+    <!-- Navegação com opções do menu hambúrguer -->
+    <nav id="list">
+            <ul>
+                <li>
+                    <a href="#">
+                    <span class="material-symbols-outlined" class="menu-link">home</span>
+                    <span data-i18n="menuInicio">Início</span>
+                </a>
+            </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">category_search</span>
+                        <span data-i18n="menuSobre">Sobre</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">sms</span>
+                        <span data-i18n="menuContato">Contato</span>
+                    </a>
+                </li>
+            </ul>
+    </nav>
+
+    <!-- Modal de linguagens -->
+    <div id="modal-language" class="modal">
+
+        <div class="modal-content">
+
+            <!-- Botão para fechar modal -->
+            <button id="fechar-language" class="fechar-modal">✕</button>
+
+            <h2 data-i18n="tituloMenuLinguagem">Selecione seu país/região</h2>
+
+            <div id="paises">
+
+                <div>
+                    <h3 data-i18n="tituloAmericas">Américas</h3>
+                    <a href="#" data-pais="US">United States</a>
+                    <a href="#" data-pais="CA">Canada - Français</a>
+                    <a href="#" data-pais="CA">Canada - English</a>
+                    <a href="#" data-pais="BR">Brasil</a>
+                    <a href="#" data-pais="MX">México</a>
+                </div>
+
+                <div>
+                    <h3 data-i18n="tituloAsia">Ásia</h3>
+                    <a href="#" data-pais="AU">Australia</a>
+                    <a href="#" data-pais="CN">中国-简体中文</a>
+                    <a href="#" data-pais="IN">India</a>
+                    <a href="#" data-pais="JP">日本</a>
+                    <a href="#" data-pais="KR">대한민국</a>
+                    <a href="#" data-pais="SG">Singapore</a>
+                </div>
+
+                <div>
+                    <h3 data-i18n="tituloEuropa">Europa</h3>
+                    <a href="#" data-pais="FR">France</a>
+                    <a href="#" data-pais="DE">Deutschland</a>
+                    <a href="#" data-pais="IT">Italia</a>
+                    <a href="#" data-pais="ES">España</a>
+                    <a href="#" data-pais="GB">United Kingdom</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de usuário -->
+    <div id="modal-user" class="modal">
+
+        <div class="modal-content">
+
+            <h2 data-i18n="tituloMenuUsuario">Informações do usuário</h2>
+
+            <!-- Botão para fechar modal -->
+            <button id="fechar-user" class="fechar-modal">✕</button>
+            
+            <div class="infos">
+                <div class="info-user">
+                    <p data-i18n="labelNome">Nome do usuário: </p>
+                    <p id="name"></p>
+                </div>
+
+                <div class="info-user">
+                    <p data-i18n="labelEmail">Email: </p>
+                    <p id="email"></p>
+                </div>
+
+                <div class="info-user">
+                    <p data-i18n="labelSenha">Senha: </p>
+                    <p id="password"></p>
+                </div>
+            
+                <div class="botao-fechar-home">
+                    <button id="fechar-home" data-i18n="botaoSair">Sair</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
