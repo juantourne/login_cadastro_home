@@ -13,6 +13,32 @@ menuPaises.addEventListener("click", (event) => {
     }
 });
 
+//Variáveis referentes ao botão linguagem e ao modal linguagem
+const botaoLinguagem = document.getElementById("btn-language");
+const modalLanguage = document.getElementById("modal-language");
+const botaoFecharLinguagem = document.getElementById("fechar-language");
+
+/* Função para abrir modal linguagem */
+botaoLinguagem.addEventListener("click", () =>{
+    modalLanguage.classList.add("ativo");
+});
+
+botaoFecharLinguagem.addEventListener("click", () => {
+    modalLanguage.classList.remove("ativo");
+});
+
+modalLanguage.addEventListener("click", event => {
+    if(event.target === modalLanguage){
+        modalLanguage.classList.remove("ativo");
+    }
+});
+
+document.addEventListener("keydown", event => {
+    if(event.key === "Escape") {
+        modalLanguage.classList.remove("ativo");
+    }
+});
+
 /* Função que lê JSON e carrega conteúdo do arquivo na variável traducoesCarregadas */
 async function carregaIdioma(idioma) {
     try {
@@ -62,3 +88,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     await carregaIdioma(idiomaAtual);
     aplicaTraducao();
 });
+
+export { idiomaAtual, carregaIdioma, traduzirTextos, aplicaTraducao, alterarLinguagem };

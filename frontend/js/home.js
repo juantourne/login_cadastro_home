@@ -1,14 +1,12 @@
+import { idiomaAtual, carregaIdioma, traduzirTextos, aplicaTraducao, alterarLinguagem } from "./i18n.js";
+
 //Variáveis para checar login do usuário
 const dadosUsuario = sessionStorage.getItem("usuarioLogado");
 const usuarioLogado = JSON.parse(dadosUsuario);
 
-//Variável de opções do menu hambúrguer
+//Variáveis relacionadas ao menu hambúrguer
+const menuBurger = document.getElementById("burger");
 const navList = document.getElementById("list");
-
-//Variáveis relacionadas ao menu de línguas
-const btnLanguage = document.getElementById("btn-language");
-const modalLanguage = document.getElementById("modal-language");
-const fecharLanguage = document.getElementById("fechar-language");
 
 //Variáveis relacionadas ao menu do usuário
 const infoUser = document.getElementById("user-info");
@@ -27,26 +25,14 @@ if (!usuarioLogado) {
     window.location.replace("index.html");
 }
 
-/* Funções para abrir e fechar tela de linguagens */
-btnLanguage.addEventListener("click", () => {
-    modalLanguage.classList.add("ativo");
-});
-
-fecharLanguage.addEventListener("click", () => {
-    modalLanguage.classList.remove("ativo");
-});
-
-modalLanguage.addEventListener("click", (event) => {
-    if(event.target === modalLanguage) {
-        modalLanguage.classList.remove("ativo");
+/* Função para abrir e fechar menu hambúrguer */
+ menuBurger.addEventListener("click", () => {
+    if(navList.style.display === 'none') {
+        navList.style.display = 'flex';
+    } else {
+        navList.style.display = 'none';
     }
-});
-
-document.addEventListener("keydown", event => {
-    if(event.key === "Escape") {
-        modalLanguage.classList.remove("ativo");
-    }
-});
+ });
 
 /* Funções para abrir e fechar tela de usuário */
 infoUser.addEventListener("click", () => {
@@ -80,14 +66,3 @@ fecharHome.addEventListener("click", () => {
 
     window.location.replace("index.html");
 });
-
-/* Abre e fecha menu hambúrguer */
-function alterarMenu() {
-    if(navList.style.display === 'none') {
-        navList.style.display = 'flex';
-    } else {
-        navList.style.display = 'none';
-    }
-}
-
-
