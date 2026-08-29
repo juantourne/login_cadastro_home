@@ -8,7 +8,7 @@
   O projeto que estou desenvolvendo tem como objetivo me ajudar a desenvolver habilidades essenciais para um desenvolvedor... tais como frontend básico e funcional, além de um backend consistente, com autenticação, banco de dados e tokens para maior segurança. 
 </p>
 <p align="justify">
-  As ferramentas que utilizei (ou que ainda vou utilizar) estão listados no tópico [Tecnologias](#tecnologias). O projeto consiste de três telas, a de <strong>Cadastro</strong>, a de <strong>Login</strong> e a <strong>Home</strong>. A de cadastro apresenta um formulário mais extenso que guarda dados secundários, além de guardar os dados que o usuário utilizará no login (usuário ou email e senha), a tela home, por sua vez, é uma tela que desenvolvi bem básica, mas que corresponde a uma aba que o usuário entraria ao efetuar login. 
+  As ferramentas que utilizei (ou que ainda vou utilizar) estão listados no tópico Tecnologias. O projeto consiste de três telas, a de <strong>Cadastro</strong>, a de <strong>Login</strong> e a <strong>Home</strong>. A de cadastro apresenta um formulário mais extenso que guarda dados secundários, além de guardar os dados que o usuário utilizará no login (usuário ou email e senha), a tela home, por sua vez, é uma tela que desenvolvi bem básica, mas que corresponde a uma aba que o usuário entraria ao efetuar login. 
 </p>
 
 ## Aprendizado
