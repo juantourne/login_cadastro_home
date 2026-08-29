@@ -1,17 +1,28 @@
 <h1 align="center">
-  Sistema de Login/Cadastro/Home
+  Login e Cadastro
 </h1>
 
 
-## Sobre o projeto
+# Sobre o projeto
 <p align="justify">
-  Comecei fortalecendo meus conhecimentos produzindo o corpo das janelas Cadastro, Login e Home. A partir delas, consegui relembrar funcionalidades como responsividade, tags com classes e ids e estilização.
+  O projeto que estou desenvolvendo tem como objetivo me ajudar a desenvolver habilidades essenciais para um desenvolvedor... tais como frontend básico e funcional, além de um backend consistente, com autenticação, banco de dados e tokens para maior segurança. 
 </p>
 <p align="justify">
-  Mais a frente, comecei a aplicar o JavaScript para conseguir trazer funcionalidades ao projeto, comecei com as validações dos inputs de dados que eram recebidos na tela de cadastro e login. Depois disso, comecei a estudar sobre localStorage e sessionStorage (que seriam a primeira forma que eu usaria para armazenar os dados do usuário para no login conseguir acessar a tela Home do projeto) e, apesar de essas ferramentas não serem apropriadas para armazenar dados, acabei usando-as mais a fim de aprendizado e para acessar a tela Home.
+  As ferramentas que utilizei (ou que ainda vou utilizar) estão listados no tópico [Tecnologias](##tecnologias). O projeto consiste de três telas, a de **Cadastro**, a de **Login** e a **Home**. A de cadastro apresenta um formulário mais extenso que guarda dados secundários, além de guardar os dados que o usuário utilizará no login (usuário ou email e senha), a tela home, por sua vez, é uma tela que desenvolvi bem básica, mas que corresponde a uma aba que o usuário entraria ao efetuar login. 
+</p>
+
+## Aprendizado
+<p align="justify">
+  Comecei fortalecendo meus conhecimentos produzindo o corpo das janelas Cadastro, Login e Home. A partir delas, consegui relembrar funcionalidades como responsividade, tags com classes, ids e estilização.
+</p>
+<p align="justify">
+  Mais a frente, comecei a aplicar o JavaScript para conseguir trazer funcionalidades ao projeto, adicionei validações dos inputs de dados que eram recebidos na tela de cadastro e login. Depois disso, estudei sobre localStorage e sessionStorage (que seriam a primeira forma que eu usaria para armazenar os dados do usuário para no login conseguir acessar a tela Home do projeto) e, apesar de essas ferramentas não serem apropriadas para armazenar dados sensíveis como a senha de um usuário, acabei usando-as mais a fim de aprendizado e para conseguir acessar a tela Home.
 </p>
 <p align="justify">
   Outras funcionalidades que aprendi depois no JavaScript foram interações HTML/CSS com o próprio JS... ao invés de usar 'alerts' para dar avisos ao usuário, implementei tags 'p' que apareceriam com mensagens de aviso no lugar. Outra coisa que utilizei foram as funções de 'click', 'keydown', 'DOMContentLoaded' para lidar com botões, modals e a tradução do site (que até o momento só tem em inglês e português). Estou aprendendo operações assíncronas no momento (que já utilizei um pouco para traduzir o site) e busco desenvolver um backend para esse projeto.
+</p>
+<p align="justify">
+  No momento, estou estudando Java (Spring Boot) e Docker. Agora sim estou deixando a minha aplicação mais completa, já estou estudando conceitos importantes como Repository/Service/Controller, DTO's, Mappers (MapStruct não utilizarei a fins de aprendizado). Além desses conceitos, tinha visto também a parte de configuração de arquivos essenciais para que o backend de fato funcione, como 'application.properties', '.env', o próprio 'docker-compose.yml'... estou me sentindo realmente um desenvolvedor agora que estou chegando nessa parte mais técnica. 
 </p>
 
 ## Funcionalidades
@@ -87,3 +98,4 @@
   ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
   ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
   ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
