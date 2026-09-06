@@ -1,5 +1,6 @@
 package com.example.login_cadastro.usuario;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,10 +10,12 @@ import java.util.List;
 public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
+    private final PasswordEncoder passwordEncoder;
 
-    public UsuarioService(UsuarioRepository usuarioRepository, UsuarioMapper usuarioMapper) {
+    public UsuarioService(UsuarioRepository usuarioRepository, UsuarioMapper usuarioMapper, PasswordEncoder passwordEncoder) {
         this.usuarioRepository = usuarioRepository;
         this.usuarioMapper = usuarioMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<UsuarioResponseDTO> listarTodos() {
@@ -49,6 +52,7 @@ public class UsuarioService {
         }
 
         Usuario usuario = usuarioMapper.toEntity(usuarioRequest);
+        usuario.setSenha(passwordEncoder.encode(usuarioRequest.getSenha()));
 
         Usuario usuarioSalvo = usuarioRepository.save(usuario);
 
@@ -61,7 +65,7 @@ public class UsuarioService {
 
             usuario.setUsername(usuarioRequest.getUsername());
             usuario.setEmail(usuarioRequest.getEmail());
-            usuario.setSenha(usuarioRequest.getSenha());
+            usuario.setSenha(passwordEncoder.encode(usuarioRequest.getSenha()));
 
         return usuarioMapper.toResponse(usuarioRepository.save(usuario));
     }
@@ -78,7 +82,7 @@ public class UsuarioService {
         }
         if(usuarioUpdate.getSenha() != null) {
             if(usuarioUpdate.getSenha().equals(usuarioUpdate.getConfirmarSenha())) {
-                usuario.setSenha(usuarioUpdate.getSenha());
+                usuario.setSenha(passwordEncoder.encode(usuarioUpdate.getSenha()));
             } else {
                 throw new SenhasNaoBatemException("Senha e confirmar senha diferentes.");
             }

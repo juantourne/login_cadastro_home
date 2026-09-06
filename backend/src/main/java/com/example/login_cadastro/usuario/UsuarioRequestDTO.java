@@ -13,7 +13,7 @@ public class UsuarioRequestDTO {
     @Email(message = "Digite um email válido.")
     private String email;
 
-    @Size(min=6, message = "A senha deve conter pelo menos 6 caracteres.")
+    @Size(min=6, max=20, message = "A senha deve conter de 6 a 20 caracteres.")
     @NotBlank(message = "Campo senha deve ser preenchido.")
     private String senha;
 
