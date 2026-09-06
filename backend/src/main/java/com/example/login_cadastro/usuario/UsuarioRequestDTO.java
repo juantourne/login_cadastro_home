@@ -1,4 +1,4 @@
-package com.example.login_cadastro.dto;
+package com.example.login_cadastro.usuario;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -6,29 +6,25 @@ import jakarta.validation.constraints.Size;
 
 public class UsuarioRequestDTO {
 
-    @NotBlank
-    private String nome;
-
-    @NotBlank
+    @NotBlank(message = "Campo usuário deve ser preenchido.")
     private String username;
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Campo email deve ser preenchido.")
+    @Email(message = "Digite um email válido.")
     private String email;
 
-    @Size(min=6)
-    @NotBlank
+    @Size(min=6, message = "A senha deve conter pelo menos 6 caracteres.")
+    @NotBlank(message = "Campo senha deve ser preenchido.")
     private String senha;
 
-    public UsuarioRequestDTO(String nome, String username, String email, String senha) {
-        this.nome = nome;
+    @NotBlank(message = "Campo confirmar senha deve ser preenchido.")
+    private String confirmarSenha;
+
+    public UsuarioRequestDTO(String username, String email, String senha, String confirmarSenha) {
         this.username = username;
         this.email = email;
         this.senha = senha;
-    }
-
-    public String getNome() {
-        return nome;
+        this.confirmarSenha = confirmarSenha;
     }
 
     public String getUsername() {
@@ -43,9 +39,7 @@ public class UsuarioRequestDTO {
         return senha;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getConfirmarSenha() { return confirmarSenha; }
 
     public void setUsername(String username) {
         this.username = username;
@@ -58,4 +52,6 @@ public class UsuarioRequestDTO {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public void setConfirmarSenha(String confirmarSenha) { this.confirmarSenha = confirmarSenha; }
 }

@@ -1,9 +1,6 @@
-package com.example.login_cadastro.mapper;
+package com.example.login_cadastro.usuario;
 
 
-import com.example.login_cadastro.dto.UsuarioRequestDTO;
-import com.example.login_cadastro.dto.UsuarioResponseDTO;
-import com.example.login_cadastro.model.Usuario;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,7 +9,6 @@ public class UsuarioMapper {
     public Usuario toEntity(UsuarioRequestDTO usuarioRequest) {
         Usuario usuario = new Usuario();
 
-        usuario.setNome(usuarioRequest.getNome());
         usuario.setUsername(usuarioRequest.getUsername());
         usuario.setEmail(usuarioRequest.getEmail());
         usuario.setSenha(usuarioRequest.getSenha());
@@ -23,7 +19,7 @@ public class UsuarioMapper {
     public UsuarioResponseDTO toResponse(Usuario usuario) {
         UsuarioResponseDTO usuarioResponse = new UsuarioResponseDTO();
 
-        usuarioResponse.setNome(usuario.getNome());
+        usuarioResponse.setId(usuario.getId());
         usuarioResponse.setUsername(usuario.getUsername());
         usuarioResponse.setEmail(usuario.getEmail());
 

@@ -1,24 +1,21 @@
-package com.example.login_cadastro.dto;
+package com.example.login_cadastro.usuario;
 
 public class UsuarioResponseDTO {
 
     private Long id;
-    private String nome;
     private String username;
     private String email;
 
-    public UsuarioResponseDTO(String nome, String username, String email) {
-        this.nome = nome;
+    public UsuarioResponseDTO() {
+    }
+
+    public UsuarioResponseDTO(String username, String email) {
         this.username = username;
         this.email = email;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public String getUsername() {
@@ -29,8 +26,8 @@ public class UsuarioResponseDTO {
         return email;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setUsername(String username) {
